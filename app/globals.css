@@ -1,26 +1,192 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+body{
+    background-color:rgb(94,143,94);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* NAVBAR */
+
+nav{
+    width:100%;
+    min-height:70px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 20px;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+nav img{
+    width:140px;
+}
+
+nav a{
+    font-size:18px;
+    font-weight:bold;
+    color:rgb(31,66,31);
+    padding:6px 10px;
+}
+
+nav input{
+    flex:1;
+    min-width:180px;
+    max-width:350px;
+    height:35px;
+    padding:0 10px;
+    border:2px solid #2f7d32;
+    border-radius:8px;
+    outline:none;
+    transition:0.2s;
+}
+
+nav input:focus{
+    border-color:#4CAF50;
+    box-shadow: 0 0 5px #4CAF50;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* GRID */
+
+.grid{
+    width:90%;
+    margin:30px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+    justify-items:center;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    transition:0.2s;
+    width:100%;
+    max-width:320px;
+}
+
+.card:hover{
+    transform:scale(1.04);
+}
+
+.card-img-container{
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+.card-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* FORM */
+
+.form-area{
+    width:100%;
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.form-card{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    width:90%;
+    max-width:400px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form-card h2{
+    text-align:center;
+    color:#2f7d32;
+}
+
+.form-card input{
+    height:40px;
+    padding:0 10px;
+    border-radius:6px;
+    border:1px solid #ccc;
+}
+
+.form-card button{
+    height:40px;
+    border:none;
+    border-radius:6px;
+    background:#2f7d32;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.form-card button:hover{
+    background:#256628;
+}
+
+
+@media (max-width: 600px){
+
+    nav{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav input{
+        width: 100%;
+        max-width: none;
+    }
+
+    nav img{
+        width: 120px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .grid{
+        width: 95%;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .card{
+        max-width: 100%;
+    }
+
+    .card-img-container{
+        height: 160px;
+    }
+
+}
+
+@media (max-width: 600px){
+
+    .form-card{
+        width: 95%;
+        padding: 20px;
+    }
+
 }
