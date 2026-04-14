@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'IBIRABio',
+  title: 'IbiraBio',
   description: 'Catálogo de espécies de árvores de Itapetininga',
 };
 
