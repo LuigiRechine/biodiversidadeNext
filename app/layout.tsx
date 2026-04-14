@@ -15,9 +15,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'IbiraBio',
   description: 'Catálogo de espécies de árvores de Itapetininga',
-  icons: {
-    icon: '/soLogo.png',
-  },
 };
 
 export default function RootLayout({
